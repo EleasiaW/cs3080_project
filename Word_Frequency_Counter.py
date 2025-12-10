@@ -13,9 +13,11 @@ class WordFrequencyCounter:
         #Create the tkinter label
         self.label = tk.Label(self.root, text="Word Frequency Counter", font=('Arial', 22))
         self.label.pack(padx=10, pady=10)
+        self.label = tk.Label(self.root, text="Enter a text file and find the top ten most frequent words.", font=('Arial', 12))
+        self.label.pack(padx=10)
 
         #Create the text box
-        self.text = tk.Text(self.root, width=80, height=20)
+        self.text = tk.Text(self.root, width=80, height=15)
         self.text.pack(pady=20)
 
         #Create button that opens file
@@ -49,6 +51,11 @@ class WordFrequencyCounter:
         #Print the top ten most frequent words and the amount of times it appears into textbox
         for i, (word, count) in enumerate(self.top_ten, 1):
             self.text.insert(tk.END, f"{i}. The word '{word}' appears {count} times.\n")    
+
+
+WordFrequencyCounter()
+
+    
 
 
 WordFrequencyCounter()
